@@ -15,7 +15,12 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
     coverage: {
-      exclude: ['src/main.tsx', 'vite.config.ts', 'src/vite-env.d.ts'],
+      exclude: [
+        'src/main.tsx',
+        'vite.config.ts',
+        'src/vite-env.d.ts',
+        '**/types.ts',
+      ],
       statements: 90,
       branches: 90,
       functions: 90,

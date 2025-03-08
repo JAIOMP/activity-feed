@@ -15,7 +15,7 @@ export const ActivityCard = ({ tour }: { tour: Tour }) => {
     return avatarUrl.replace('{width}', width.toString());
   };
   return (
-    <div key={tour.id} className={styles.card}>
+    <div key={tour.id} className={styles.card} data-testid='activity-card'>
       <div className={styles.cardHeader}>
         <div className={styles.user}>
           <img
