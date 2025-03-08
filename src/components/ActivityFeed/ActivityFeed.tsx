@@ -10,8 +10,12 @@ export const ActivityFeed = () => {
     tours: [],
   });
   const [tours, setTours] = useState<Tour[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchActivities = useCallback(() => {
+    if (loading) return;
+    setLoading(true);
+
     fetch(
       `https://5cmf66e3ssmsx6mikgeh3mq4mu0fhzvp.lambda-url.eu-west-1.on.aws/?page=${data.page.number}&size=${data.page.size}`,
     )
@@ -21,8 +25,11 @@ export const ActivityFeed = () => {
       .then((response) => {
         setData(response);
         setTours(response.tours);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-  }, [data.page.number, data.page.size]);
+  }, [data.page.number, data.page.size, loading]);
 
   useEffect(() => {
     fetchActivities();
@@ -33,6 +40,12 @@ export const ActivityFeed = () => {
       {tours.map((tour) => (
         <ActivityCard key={tour.id} tour={tour} />
       ))}
+      {loading && (
+        <div className={styles.loadingContainer}>
+          <div className={styles.spinner} />
+          <p>Loading, please wait...</p>
+        </div>
+      )}
     </div>
   );
 };
