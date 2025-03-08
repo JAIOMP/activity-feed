@@ -11,6 +11,6 @@ describe('Home Component', () => {
     render(<Home />);
 
     expect(screen.getByTestId('layout')).toBeInTheDocument();
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    expect(screen.getByTestId('activity-feed')).toBeInTheDocument();
   });
 });

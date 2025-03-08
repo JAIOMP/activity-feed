@@ -17,7 +17,7 @@ describe('Header', () => {
   test('renders correctly', () => {
     render(<Header />);
 
-    expect(screen.getByText('Vite')).toBeInTheDocument();
+    expect(screen.getByText('Activity Feed')).toBeInTheDocument();
     expect(screen.getByText('🌙 Dark Mode')).toBeInTheDocument();
   });
 
