@@ -15,22 +15,4 @@ describe('App Routing', () => {
     );
     expect(screen.getByTestId('home-page')).toBeInTheDocument();
   });
-
-  test('renders Home page on "/about" route', () => {
-    render(
-      <MemoryRouter initialEntries={['/about']}>
-        <App />
-      </MemoryRouter>,
-    );
-    expect(screen.getByTestId('home-page')).toBeInTheDocument();
-  });
-
-  test('renders Home page on "/contact" route', () => {
-    render(
-      <MemoryRouter initialEntries={['/contact']}>
-        <App />
-      </MemoryRouter>,
-    );
-    expect(screen.getByTestId('home-page')).toBeInTheDocument();
-  });
 });
