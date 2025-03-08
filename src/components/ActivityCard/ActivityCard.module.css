@@ -56,3 +56,45 @@
   justify-content: space-between;
   row-gap: var(--spacing-md);
 }
+
+.imageGrid {
+  display: grid;
+  gap: 10px;
+}
+
+.fullWidth {
+  width: 100%;
+  height: auto;
+}
+
+.twoImages {
+  display: flex;
+  gap: 10px;
+}
+
+.halfWidth {
+  width: 50%;
+  height: auto;
+}
+
+.threeImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.largeImage {
+  width: 100%;
+  height: auto;
+}
+
+.smallImages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.smallImage {
+  width: 100%;
+  height: auto;
+}

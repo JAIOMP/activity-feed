@@ -6,6 +6,7 @@ import {
   formatNumberWithCommas,
   formatSeconds,
 } from '@/utils';
+import { ImageGrid } from '../ImageGrid/ImageGrid';
 import styles from './ActivityCard.module.css';
 
 export const ActivityCard = ({ tour }: { tour: Tour }) => {
@@ -40,17 +41,7 @@ export const ActivityCard = ({ tour }: { tour: Tour }) => {
           <div>{formatNumberWithCommas(tour.elevation_up)} m</div>
           <div>{formatNumberWithCommas(tour.elevation_down)} m</div>
         </div>
-        <div className={styles.images}>
-          {tour.images.map((image) => {
-            const width = 450;
-            const height = 450;
-            const url = image.src
-              .replace('{width}', width.toString())
-              .replace('{height}', height.toString());
-
-            return <img key={image.id} src={url} alt={image.alt} />;
-          })}
-        </div>
+        <ImageGrid images={tour.images} />
       </div>
     </div>
   );

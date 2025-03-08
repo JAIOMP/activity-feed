@@ -1,3 +1,9 @@
+export interface Image {
+  src: string;
+  alt?: string;
+  id: number;
+}
+
 export interface Tour {
   id: string;
   name: string;
@@ -16,7 +22,7 @@ export interface Tour {
   time_in_motion: number; // in seconds
   status: 'public' | 'private'; // Assuming possible values
   is_premium: boolean; // Converted from string to boolean
-  images: { src: string; alt?: string; id: number }[];
+  images: Image[];
   vector_map_image: {
     src: string;
     attribution: string;
