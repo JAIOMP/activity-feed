@@ -12,6 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --bg-color: #101010;
+  --bg-card-color: #f8f9fa;
   --layout-max-width: 1440px;
   --nav-height: 64px;
   --text-color: #ffffff;
@@ -20,6 +21,15 @@
   --nav-logo-height: 24px;
   --z-index-footer: 10;
   --button-bg: #333;
+
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 40px;
+  --spacing-xxxl: 64px;
 }
 
 [data-theme="light"] {
