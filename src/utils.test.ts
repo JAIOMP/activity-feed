@@ -41,51 +41,51 @@ describe('utils', () => {
   describe('convertMetersToKm', () => {
     it('should convert meters to kilometers correctly', () => {
       const kilometers = convertMetersToKm(1500);
-      expect(kilometers).toBe('1.50');
+      expect(kilometers).toBe('1.50 km');
     });
 
     it('should handle 0 meters correctly', () => {
       const kilometers = convertMetersToKm(0);
-      expect(kilometers).toBe('0.00');
+      expect(kilometers).toBe('0.00 km');
     });
 
     it('should handle large distances correctly', () => {
       const kilometers = convertMetersToKm(1000000); // 1000 kilometers
-      expect(kilometers).toBe('1000.00');
+      expect(kilometers).toBe('1000.00 km');
     });
   });
 
   describe('calculateSpeed', () => {
     it('should calculate speed correctly', () => {
       const speed = calculateSpeed(10000, 3600); // 10 km in 1 hour
-      expect(speed).toBe('10.00');
+      expect(speed).toBe('10.00 km/h');
     });
 
     it('should handle zero distance correctly', () => {
       const speed = calculateSpeed(0, 3600); // 0 km in 1 hour
-      expect(speed).toBe('0.00');
+      expect(speed).toBe('0.00 km/h');
     });
 
     it('should handle zero time correctly', () => {
       const speed = calculateSpeed(10000, 0); // Should not be possible, handle gracefully
-      expect(speed).toBe('Infinity'); // Or handle the error case appropriately
+      expect(speed).toBe('Infinity km/h'); // Or handle the error case appropriately
     });
   });
 
   describe('formatNumberWithCommas', () => {
     it('should format numbers with commas correctly', () => {
       const formattedNumber = formatNumberWithCommas(1000000);
-      expect(formattedNumber).toBe('1,000,000');
+      expect(formattedNumber).toBe('1,000,000 m');
     });
 
     it('should handle numbers without a comma correctly', () => {
       const formattedNumber = formatNumberWithCommas(999);
-      expect(formattedNumber).toBe('999');
+      expect(formattedNumber).toBe('999 m');
     });
 
     it('should handle negative numbers correctly', () => {
       const formattedNumber = formatNumberWithCommas(-1000000);
-      expect(formattedNumber).toBe('-1,000,000');
+      expect(formattedNumber).toBe('-1,000,000 m');
     });
   });
 });

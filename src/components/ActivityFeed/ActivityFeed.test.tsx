@@ -43,7 +43,7 @@ global.fetch = vi.fn(() =>
       Promise.resolve({
         tours: [tour],
         links: [],
-        page: {},
+        page: { size: 20, number: 0 },
       }),
   }),
 );
@@ -64,7 +64,7 @@ describe('ActivityFeed', () => {
 
   it('displays no tours when fetch returns an empty array', async () => {
     global.fetch.mockResolvedValueOnce({
-      json: () => Promise.resolve({ tours: [] }),
+      json: () => Promise.resolve({ tours: [], page: { size: 20, number: 0 } }),
     });
 
     render(<ActivityFeed />);
