@@ -12,6 +12,7 @@ export const ActivityFeed = () => {
   const [tours, setTours] = useState<Tour[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const fetchActivities = useCallback(() => {
     if (loading) return;
     setLoading(true);
@@ -29,7 +30,7 @@ export const ActivityFeed = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [data.page.number, data.page.size, loading]);
+  }, [data.page.number, data.page.size]);
 
   useEffect(() => {
     fetchActivities();
