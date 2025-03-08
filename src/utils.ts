@@ -17,15 +17,15 @@ export const formatSeconds = (seconds: number): string => {
 
 export const convertMetersToKm = (meters: number): string => {
   const kilometers = meters / 1000;
-  return kilometers.toFixed(2); // Return with two decimal points
+  return `${kilometers.toFixed(2)} km`; // Return with two decimal points
 };
 
 export const calculateSpeed = (distance: number, time: number): string => {
   // Convert distance to kilometers and time to hours
   const speed = distance / 1000 / (time / 3600); // Speed in km/h
-  return speed.toFixed(2); // Round the speed to 2 decimal places
+  return `${speed.toFixed(2)} km/h`; // Round the speed to 2 decimal places
 };
 
 export const formatNumberWithCommas = (num: number): string => {
-  return num.toLocaleString(); // Adds comma separators for thousands
+  return `${num.toLocaleString()} m`; // Adds comma separators for thousands
 };

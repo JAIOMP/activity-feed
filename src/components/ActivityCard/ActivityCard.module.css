@@ -1,7 +1,7 @@
 .card {
   background-color: var(--bg-card-color);
   margin: var(--spacing-md);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -41,60 +41,18 @@
 
 .stats > div {
   border-right: 1px solid;
-  padding: var(--spacing-sm);
+  margin: var(--spacing-sm);
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stats > :last-child {
   border: none;
 }
 
-.images {
+.icon {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: var(--spacing-md);
-}
-
-.imageGrid {
-  display: grid;
-  gap: 10px;
-}
-
-.fullWidth {
-  width: 100%;
-  height: auto;
-}
-
-.twoImages {
-  display: flex;
-  gap: 10px;
-}
-
-.halfWidth {
-  width: 50%;
-  height: auto;
-}
-
-.threeImages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.largeImage {
-  width: 100%;
-  height: auto;
-}
-
-.smallImages {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.smallImage {
-  width: 100%;
-  height: auto;
+  margin-right: var(--spacing-md);
 }
